@@ -3,17 +3,14 @@ package com.example.f1driverapp
 import android.util.Log
 import androidx.lifecycle.*
 import com.example.f1driverapp.data.DriverEntity
-import com.example.f1driverapp.data.SampleDataProvider
 import com.example.f1driverapp.webaccess.RetrofitInstance
-
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+
 
 class MainViewModel  : ViewModel() {
 
     // MutableLiveData - means this list can be changed at runtime
-    val _drivers = MutableLiveData<List<DriverEntity>> =  MutableLiveData()
+    private val _drivers: MutableLiveData<List<DriverEntity>> =  MutableLiveData()
 
     // Driver is exposed to the UI - Fragment
     val drivers: LiveData<List<DriverEntity>>
@@ -36,7 +33,7 @@ class MainViewModel  : ViewModel() {
         //web-access so run in a background thread - Coroutine
         viewModelScope.launch {
             _isLoading.value = true
-            val fetchDrivers = RetrofitInstance.api.getDrivers()
+            val fetchedDrivers = RetrofitInstance.api.getDrivers()
             Log.i(TAG, "List Of Drivers : $fetchedDrivers")
             _drivers.value = fetchedDrivers
             _isLoading.value = false

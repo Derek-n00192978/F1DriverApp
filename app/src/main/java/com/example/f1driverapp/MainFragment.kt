@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -19,7 +20,7 @@ import com.example.f1driverapp.databinding.FragmentMainBinding
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
 class MainFragment  : Fragment(),
-      DriverListAdapter.ListItemListner{
+      DriverListAdapter.ListItemListener{
 
 
     private lateinit var viewModel: MainViewModel
@@ -31,6 +32,10 @@ class MainFragment  : Fragment(),
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        (activity as AppCompatActivity)
+            .supportActionBar?.setDisplayHomeAsUpEnabled(false)
+        setHasOptionsMenu(true)
 
         binding = FragmentMainBinding.inflate(inflater, container, false)
         // remember viewModel contains the MutableLiveData which is the list of Drivers
@@ -49,11 +54,11 @@ class MainFragment  : Fragment(),
             // binding.recyclerView.addItemDecoration(divider)
         }
 
-        viewModel._drivers.observe(viewLifecycleOwner, Observer {
+        viewModel.drivers.observe(viewLifecycleOwner, Observer {
             // for debugging - Log.i() to the Logcat during execution and view Info messages with the tag TAG (see constants for the literal string)
-            // Log.i(TAG, it.toString())
+             Log.i(TAG, it.toString())
 
-            adapter = DriverListAdapter(it)
+            adapter = DriverListAdapter(it, this@MainFragment)
             binding.recyclerView.adapter = adapter
             binding.recyclerView.layoutManager = LinearLayoutManager(activity)
         }    )

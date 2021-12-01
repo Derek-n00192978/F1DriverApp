@@ -184,5 +184,29 @@
         tools:ignore="Autofill,MissingConstraints"
         tools:text="Driver wikipedia Here" />
 
+    <TextView
+        android:id="@+id/myFav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Favourite Driver"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/urla"/>
+
+    <EditText
+        android:id="@+id/myNotes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="400dp"
+        android:layout_marginEnd="30dp"
+        android:hint="Enter your comments in here"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/myFav"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

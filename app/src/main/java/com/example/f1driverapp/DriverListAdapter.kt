@@ -12,9 +12,9 @@ import com.example.f1driverapp.databinding.ListItemBinding
 
 // a reference to the Driver List data is passed in during intialisation
 
-class DriverListAdapter(private val driverList: List<DriverEntity>
-
-) :
+class DriverListAdapter(private val driverList: List<DriverEntity>,
+    // now a listener for each list item is also passed in.
+                        private val listener: ListItemListener) :
 // Inherits from RecyclerView.Adapter
 // it also has an inner class ViewHolder
     RecyclerView.Adapter<DriverListAdapter.ViewHolder>() {
@@ -53,12 +53,16 @@ class DriverListAdapter(private val driverList: List<DriverEntity>
 
             // same as holder.binding.plantName.text
             driverName.text = driver.givenName
+            root.setOnClickListener{
+                listener.onItemClick(driver)
+            }
+
 
         }
 
 
     }
-    interface ListItemListner {
+    interface ListItemListener {
         fun onItemClick(driver: DriverEntity)
     }
 }

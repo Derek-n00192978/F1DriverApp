@@ -18,10 +18,8 @@ import com.example.f1driverapp.databinding.EditorFragmentBinding
 
 
 class EditorFragment : Fragment() {
-    private val args: EditorFragmentArgs by navArgs()
 
-
-
+   // private val args: EditorFragmentArgs by navArgs()
     private lateinit var binding: EditorFragmentBinding
     private lateinit var viewModel: EditorViewModel
 
@@ -41,8 +39,8 @@ class EditorFragment : Fragment() {
         binding = EditorFragmentBinding.inflate(inflater, container, false)
 
         // Set the givenName and nationality from the Driver object passed in from the MainFragment
-        binding.givenName.setText(args.drivers.name)
-        binding.nat.setText(args.driver.nationality)
+//        binding.givenName.setText(args.drivers.name)
+//        binding.nat.setText(args.driver.nationality)
 
         // create the viewModel, observe the live data (Favourite object for the current Driver)
         // if the live data changes update the layout so it displays those comments.
@@ -52,7 +50,7 @@ class EditorFragment : Fragment() {
         })
 
         // tell the viewModel to get access the local database to see if there are favourite comments for the current driver
-        viewModel.getFavourite(args.drivers.id)
+    //    viewModel.getFavourite(args.drivers.id)
 
 
         requireActivity().onBackPressedDispatcher.addCallback(
@@ -77,7 +75,7 @@ class EditorFragment : Fragment() {
     private fun saveAndReturn() : Boolean{
         // at the moment we save to favourites, even if there are no comments
         // Try insert a save or cancel functionality so this does not happen.
-        viewModel.saveFavourite(FavouriteEntity(args.drivers.id, binding.myNotes.text.toString()))
+    //    viewModel.saveFavourite(FavouriteEntity(args.drivers.id, binding.myNotes.text.toString()))
 
         findNavController().navigateUp()
         return true
