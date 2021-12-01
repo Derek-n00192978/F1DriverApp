@@ -18,7 +18,9 @@ import com.example.f1driverapp.databinding.FragmentMainBinding
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
-class MainFragment  : Fragment() {
+class MainFragment  : Fragment(),
+      DriverListAdapter.ListItemListner{
+
 
     private lateinit var viewModel: MainViewModel
     private lateinit var binding: FragmentMainBinding
@@ -47,7 +49,7 @@ class MainFragment  : Fragment() {
             // binding.recyclerView.addItemDecoration(divider)
         }
 
-        viewModel.driverList.observe(viewLifecycleOwner, Observer {
+        viewModel._drivers.observe(viewLifecycleOwner, Observer {
             // for debugging - Log.i() to the Logcat during execution and view Info messages with the tag TAG (see constants for the literal string)
             // Log.i(TAG, it.toString())
 
@@ -59,11 +61,11 @@ class MainFragment  : Fragment() {
         return binding.root
 
     }
-    fun onItemClick(driver: DriverEntity) {
+    override fun onItemClick(driver: DriverEntity) {
 
         // Log - print out to logcat to help with debugging if errors occur
         // TAG is a constant defined in Constants.kt - you can search yhe logcat using this TAG to help with debugging errors
-        Log.i(TAG, "onItemClick : Received Driver name ${driver.name}")
+        Log.i(TAG, "onItemClick : Received Driver name ${driver.givenName}")
         val action = MainFragmentDirections.actionMainFragmentToSecondFragment(driver)
         findNavController().navigate(action)
     }

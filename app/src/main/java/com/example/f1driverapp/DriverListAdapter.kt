@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.f1driverapp.data.DriverEntity
 import com.example.f1driverapp.databinding.ListItemBinding
 
-//import com.example.f1driverapp.databinding.ListItemBinding
+
 
 
 // a reference to the Driver List data is passed in during intialisation
@@ -52,10 +52,13 @@ class DriverListAdapter(private val driverList: List<DriverEntity>
         with(holder.binding) {
 
             // same as holder.binding.plantName.text
-            driverName.text = driver.name
+            driverName.text = driver.givenName
 
         }
 
 
+    }
+    interface ListItemListner {
+        fun onItemClick(driver: DriverEntity)
     }
 }

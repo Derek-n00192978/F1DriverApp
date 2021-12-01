@@ -16,7 +16,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_driver" />
+        app:srcCompat="@drawable/ic_picture1" />
 
     <TextView
         android:id="@+id/driverName"
