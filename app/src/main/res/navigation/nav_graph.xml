@@ -10,19 +10,16 @@
         android:name="com.example.f1driverapp.MainFragment"
         android:label="MainFragment" >
         <action
-            android:id="@+id/action_mainFragment_to_secondFragment"
-            app:destination="@id/secondFragment" />
+            android:id="@+id/action_mainFragment_to_editorFragment"
+            app:destination="@id/editorFragment" />
     </fragment>
     <fragment
-        android:id="@+id/secondFragment"
-        android:name="com.example.f1driverapp.SecondFragment"
-        android:label="fragment_second"
-        tools:layout="@layout/fragment_second" >
+        android:id="@+id/editorFragment"
+        android:name="com.example.f1driverapp.EditorFragment"
+        android:label="editor_fragment"
+        tools:layout="@layout/editor_fragment" >
         <action
-            android:id="@+id/action_secondFragment_to_mainFragment"
+            android:id="@+id/action_editorFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
-        <argument
-            android:name="driverEntity"
-            app:argType="com.example.f1driverapp.data.DriverEntity" />
     </fragment>
 </navigation>

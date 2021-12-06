@@ -12,16 +12,16 @@ import com.example.f1driverapp.databinding.ListItemBinding
 
 // a reference to the Driver List data is passed in during intialisation
 
-class DriverListAdapter(private val driverList: List<DriverEntity>,
+class DriversListAdapter(private val driversList: List<DriverEntity>,
     // now a listener for each list item is also passed in.
-                        private val listener: ListItemListener) :
+    private val listener: ListItemListener) :
 // Inherits from RecyclerView.Adapter
 // it also has an inner class ViewHolder
-    RecyclerView.Adapter<DriverListAdapter.ViewHolder>() {
+    RecyclerView.Adapter<DriversListAdapter.ViewHolder>() {
 
         val selectedDrivers = arrayListOf<DriverEntity>()
 
-    // Innher class details with
+    // Inner class details with
     inner class ViewHolder(itemView: View) :
         RecyclerView.ViewHolder(itemView) {
         // binding to list_item.xml
@@ -41,13 +41,13 @@ class DriverListAdapter(private val driverList: List<DriverEntity>,
     }
 
 
-    override fun getItemCount() = driverList.size
+    override fun getItemCount() = driversList.size
 
     // each time data is passed to the RecyclerView's row
     // You need to bind the data to that ViewHolder
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         // get the plant you want to display from the plantsList
-        val driver = driverList[position]
+        val driver = driversList[position]
         // remember use with so you can refer to an objects attributes without contstantly mentioning the object
         with(holder.binding) {
 
