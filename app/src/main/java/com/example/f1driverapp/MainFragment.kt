@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.NavDirections
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -72,11 +71,13 @@ class MainFragment  : Fragment(),
 
         // Log - print out to logcat to help with debugging if errors occur
         // TAG is a constant defined in Constants.kt - you can search yhe logcat using this TAG to help with debugging errors
-        Log.i(TAG, "onItemClick : Received Driver name ${driver.givenName}")
-        val action = MainFragmentDirections.actionMainFragmentToEditorFragment()
+        Log.i(TAG, "onItemClick : Received Driver name ${driver}")
+        val action = MainFragmentDirections.actionMainFragmentToEditorFragment(driver)
         findNavController().navigate(action)
     }
 
 
 
 }
+
+

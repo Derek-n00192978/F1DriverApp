@@ -19,10 +19,7 @@ import com.example.f1driverapp.databinding.EditorFragmentBinding
 
 class EditorFragment : Fragment() {
 
-   //private val args: EditorFragmentArgs by navArgs()
-
-
-
+    private val args: EditorFragmentArgs by navArgs()
     private lateinit var binding: EditorFragmentBinding
     private lateinit var viewModel: EditorViewModel
 
@@ -42,18 +39,23 @@ class EditorFragment : Fragment() {
         binding = EditorFragmentBinding.inflate(inflater, container, false)
 
         // Set the givenName and nationality from the Driver object passed in from the MainFragment
-//        binding.givenName.setText(args.driver.name)
-//        binding.nat.setText(args.driver.nationality)
+     //   binding.editor.setText("you selected driver name $(args.driver)")
+        binding.code.setText(args.driver.code)
+        binding.givenName.setText(args.driver.givenName)
+        binding.permanentNo.setText(args.driver.permanentNumber)
+        binding.dob.setText(args.driver.dob)
+        binding.nat.setText(args.driver.nationality)
+        binding.url.setText(args.driver.url)
 
         // create the viewModel, observe the live data (Favourite object for the current Driver)
         // if the live data changes update the layout so it displays those comments.
-        viewModel = ViewModelProvider(this).get(EditorViewModel::class.java)
-        viewModel.currentFavourite.observe(viewLifecycleOwner, Observer {
-            binding.myNotes.setText(it.myNotes)
-        })
+        //viewModel = ViewModelProvider(this).get(EditorViewModel::class.java)
+        //viewModel.currentFavourite.observe(viewLifecycleOwner, Observer {
+        //    binding.myNotes.setText(it.myNotes)
+        //})
 
         // tell the viewModel to get access the local database to see if there are favourite comments for the current driver
-//        viewModel.getFavourite(args.driver.id)
+        //viewModel.getFavourite(args.driver.id)
 
 
         requireActivity().onBackPressedDispatcher.addCallback(

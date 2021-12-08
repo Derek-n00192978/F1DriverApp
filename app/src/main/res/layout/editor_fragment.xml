@@ -8,40 +8,15 @@
     tools:context=".EditorFragment"
     >
 
-    <TextView
-        android:id="@+id/titleMainHeading"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="30dp"
-        android:fontFamily="sans-serif-black"
-        android:text="DriverId : "
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <TextView
-        android:id="@+id/driverId"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="32dp"
-        android:hint="DriverId"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        app:layout_constraintStart_toEndOf="@+id/titleMainHeading"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="Autofill,MissingConstraints"
-        tools:text="DriverId here" />
 
     <TextView
         android:id="@+id/titleHeading"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="sans-serif-black"
-        android:text="Driver Code Name: "
+        android:text="Driver Code "
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -51,7 +26,7 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="16dp"
         android:hint="Driver code"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintStart_toEndOf="@+id/titleHeading"
@@ -60,51 +35,53 @@
         tools:text="Driver Code here" />
 
     <TextView
-        android:id="@+id/givenName"
+        android:id="@+id/givenNameHeading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="26dp"
         android:fontFamily="sans-serif-black"
         android:text="Driver's Name "
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/code" />
+        app:layout_constraintTop_toBottomOf="@+id/titleHeading" />
+
 
     <TextView
-        android:id="@+id/Name"
+        android:id="@+id/givenName"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
-        android:layout_marginTop="132dp"
+        android:layout_marginTop="72dp"
         android:hint="Driver Name"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        app:layout_constraintStart_toEndOf="@+id/givenName"
+        app:layout_constraintStart_toEndOf="@+id/givenNameHeading"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="Autofill,MissingConstraints"
         tools:text="Driver Name here" />
 
+
     <TextView
-        android:id="@+id/permanentNo"
+        android:id="@+id/permanentNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="sans-serif-black"
         android:text="Driver's Number "
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/code" />
+        app:layout_constraintTop_toBottomOf="@id/givenNameHeading" />
 
     <TextView
-        android:id="@+id/permanentnumber"
+        android:id="@+id/permanentNo"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
-        android:layout_marginTop="184dp"
+        android:layout_marginTop="120dp"
         android:hint="Driver number"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        app:layout_constraintStart_toEndOf="@+id/permanentNo"
+        app:layout_constraintStart_toEndOf="@id/permanentNumber"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="Autofill,MissingConstraints"
         tools:text="Driver Number here" />
@@ -114,7 +91,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="sans-serif-black"
         android:text="Driver's D.O.B. "
         android:textSize="20sp"
@@ -125,8 +102,8 @@
         android:id="@+id/dob"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="76dp"
-        android:layout_marginTop="236dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="168dp"
         android:hint="Driver number"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintStart_toEndOf="@+id/doba"
@@ -151,7 +128,7 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="280dp"
+        android:layout_marginTop="220dp"
         android:hint="Driver nat"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintStart_toEndOf="@+id/nata"
@@ -176,7 +153,7 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
-        android:layout_marginTop="340dp"
+        android:layout_marginTop="276dp"
         android:hint="Driver url"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintStart_toEndOf="@id/urla"
@@ -188,25 +165,25 @@
         android:id="@+id/myFav"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="84dp"
         android:fontFamily="sans-serif-black"
         android:text="Favourite Driver"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/urla"/>
+        app:layout_constraintTop_toBottomOf="@+id/urla" />
 
     <EditText
         android:id="@+id/myNotes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="400dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="44dp"
         android:layout_marginEnd="30dp"
         android:hint="Enter your comments in here"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/myFav"/>
+        app:layout_constraintTop_toTopOf="@+id/myFav" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

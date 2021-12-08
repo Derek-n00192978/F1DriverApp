@@ -12,6 +12,10 @@
         <action
             android:id="@+id/action_mainFragment_to_editorFragment"
             app:destination="@id/editorFragment" />
+        <argument
+            android:name="driverid"
+            app:argType="integer"
+            android:defaultValue="0" />
     </fragment>
     <fragment
         android:id="@+id/editorFragment"
@@ -21,5 +25,8 @@
         <action
             android:id="@+id/action_editorFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
+        <argument
+            android:name="driver"
+            app:argType="com.example.f1driverapp.data.DriverEntity" />
     </fragment>
 </navigation>
